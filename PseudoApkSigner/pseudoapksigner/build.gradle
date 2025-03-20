@@ -1,0 +1,53 @@
+apply plugin: 'com.android.library'
+
+buildscript {
+    repositories {
+        google()
+        mavenCentral()
+        maven { url "https://repo.grails.org/grails/core/" }
+    }
+    dependencies {
+    }
+}
+
+android {
+    compileSdkVersion 35
+
+    defaultConfig {
+        minSdkVersion 1
+        targetSdkVersion 35
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+    namespace 'com.aefyr.pseudoapksigner'
+}
+
+ext {
+    bintrayRepo = 'maven'
+    bintrayName = 'PseudoApkSigner'
+
+    libraryName = 'PseudoApkSigner'
+    publishedGroupId = 'com.github.aefyr'
+    artifact = 'pseudoapksigner'
+    libraryVersion = '1.6'
+
+    libraryDescription = 'A lightweight Java library to sign APK files on Android'
+
+    siteUrl = 'https://github.com/Aefyr/PseudoApkSigner'
+    gitUrl = 'https://github.com/Aefyr/PseudoApkSigner.git'
+
+
+    developerId = 'aefyr'
+    developerName = 'Edward Lincoln'
+    developerEmail = 'polychromaticfox@gmail.com'
+
+    licenseName = 'The Apache Software License, Version 2.0'
+    licenseUrl = 'http://www.apache.org/licenses/LICENSE-2.0.txt'
+    allLicenses = ["Apache-2.0"]
+}
+
